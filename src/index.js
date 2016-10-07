@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 
-export default function(targetDirs, blackList) {
+export default function(targetDirs, blackList, enableDebug) {
   const alias = {};
   blackList = blackList || {};
 
@@ -17,15 +17,22 @@ export default function(targetDirs, blackList) {
       });
       return;
     } else if (stat.isFile()) {
-      const content = fs.readFileSync(dir, 'utf-8'),
+      const moduleName = /^(.*)\.js$/.exec(dir);
+      if (!moduleName) {
+        return;
+      }
+
+      const modulePlatform = /^(.*)\.\w+$/.exec(moduleName[1]),
+        module = modulePlatform ? modulePlatform[1] : moduleName[1],
+        content = fs.readFileSync(dir, 'utf-8'),
         match = /@providesModule ([\w\.]+)/.exec(content);
       let aliasLabel;
       if (match) {
         aliasLabel = match[1];
-        if (alias[aliasLabel]) {
+        if (alias[aliasLabel] && enableDebug) {
           console.warn(`Duplicated module ${aliasLabel}: ${dir}`);
         }
-        alias[aliasLabel] = dir;
+        alias[aliasLabel] = module;
       }
     }
   }
