@@ -1,0 +1,91 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/chenpingyuan/.nvm/versions/node/v4.2.1/bin/node',
+1 verbose cli   '/Users/chenpingyuan/.nvm/versions/node/v4.2.1/bin/npm',
+1 verbose cli   'adduser' ]
+2 info using npm@3.10.8
+3 info using node@v4.2.1
+4 verbose adduser before first PUT { _id: 'org.couchdb.user:pychen',
+4 verbose adduser   name: 'pychen',
+4 verbose adduser   password: 'XXXXX',
+4 verbose adduser   email: 'cpy891204@gmail.com',
+4 verbose adduser   type: 'user',
+4 verbose adduser   roles: [],
+4 verbose adduser   date: '2016-10-07T04:32:54.500Z' }
+5 verbose request uri http://r.cnpmjs.org/-/user/org.couchdb.user:pychen
+6 verbose request new user, so can't send auth
+7 info attempt registry request try #1 at 12:32:54 PM
+8 verbose request id ccc3a0667f43be51
+9 http request PUT http://r.cnpmjs.org/-/user/org.couchdb.user:pychen
+10 http 409 http://r.cnpmjs.org/-/user/org.couchdb.user:pychen
+11 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+11 verbose headers   date: 'Fri, 07 Oct 2016 04:32:55 GMT',
+11 verbose headers   'content-type': 'application/json; charset=utf-8',
+11 verbose headers   'content-length': '59',
+11 verbose headers   connection: 'keep-alive',
+11 verbose headers   'x-current-requests': '1',
+11 verbose headers   'x-readtime': '7' }
+12 verbose request invalidating /Users/chenpingyuan/.npm/r.cnpmjs.org/-/user/org.couchdb.user_3Apychen on PUT
+13 verbose adduser update existing user
+14 verbose request uri http://r.cnpmjs.org/-/user/org.couchdb.user:pychen?write=true
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 12:32:55 PM
+17 http request GET http://r.cnpmjs.org/-/user/org.couchdb.user:pychen?write=true
+18 http 200 http://r.cnpmjs.org/-/user/org.couchdb.user:pychen?write=true
+19 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+19 verbose headers   date: 'Fri, 07 Oct 2016 04:32:55 GMT',
+19 verbose headers   'content-type': 'application/json; charset=utf-8',
+19 verbose headers   'transfer-encoding': 'chunked',
+19 verbose headers   connection: 'keep-alive',
+19 verbose headers   'x-current-requests': '1',
+19 verbose headers   'x-readtime': '5',
+19 verbose headers   'strict-transport-security': 'max-age=15768000',
+19 verbose headers   'content-encoding': 'gzip' }
+20 verbose adduser userobj { _id: 'org.couchdb.user:pychen',
+20 verbose adduser   name: 'pychen',
+20 verbose adduser   password: 'XXXXX',
+20 verbose adduser   email: 'cpy891204@gmail.com',
+20 verbose adduser   type: 'user',
+20 verbose adduser   roles: [],
+20 verbose adduser   date: '2016-10-07T04:32:54.500Z' }
+21 verbose request uri http://r.cnpmjs.org/-/user/org.couchdb.user:pychen/-rev/2-9591334eb1f4066376916a9869beb607
+22 verbose request updating existing user; sending authorization
+23 info attempt registry request try #1 at 12:32:55 PM
+24 http request PUT http://r.cnpmjs.org/-/user/org.couchdb.user:pychen/-rev/2-9591334eb1f4066376916a9869beb607
+25 http 401 http://r.cnpmjs.org/-/user/org.couchdb.user:pychen/-rev/2-9591334eb1f4066376916a9869beb607
+26 verbose headers { server: 'nginx/1.4.6 (Ubuntu)',
+26 verbose headers   date: 'Fri, 07 Oct 2016 04:32:55 GMT',
+26 verbose headers   'content-type': 'application/json; charset=utf-8',
+26 verbose headers   'content-length': '47',
+26 verbose headers   connection: 'keep-alive',
+26 verbose headers   'x-current-requests': '1',
+26 verbose headers   'x-readtime': '3' }
+27 verbose request invalidating /Users/chenpingyuan/.npm/r.cnpmjs.org/-/user/org.couchdb.user_3Apychen on PUT
+28 verbose adduser back [ { [Error: unauthorized Login first: -/user/org.couchdb.user:pychen/-rev/2-9591334eb1f4066376916a9869beb607] statusCode: 401, code: 'E401' },
+28 verbose adduser   { error: 'unauthorized', reason: 'Login first' },
+28 verbose adduser   '{"error":"unauthorized","reason":"Login first"}' ]
+29 warn adduser Incorrect username or password
+29 warn adduser You can reset your account by visiting:
+29 warn adduser
+29 warn adduser     https://npmjs.org/forgot
+30 verbose stack Error: unauthorized Login first: -/user/org.couchdb.user:pychen/-rev/2-9591334eb1f4066376916a9869beb607
+30 verbose stack     at makeError (/Users/chenpingyuan/.nvm/versions/node/v4.2.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+30 verbose stack     at CachingRegistryClient.<anonymous> (/Users/chenpingyuan/.nvm/versions/node/v4.2.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+30 verbose stack     at Request._callback (/Users/chenpingyuan/.nvm/versions/node/v4.2.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+30 verbose stack     at Request.self.callback (/Users/chenpingyuan/.nvm/versions/node/v4.2.1/lib/node_modules/npm/node_modules/request/request.js:187:22)
+30 verbose stack     at emitTwo (events.js:87:13)
+30 verbose stack     at Request.emit (events.js:172:7)
+30 verbose stack     at Request.<anonymous> (/Users/chenpingyuan/.nvm/versions/node/v4.2.1/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+30 verbose stack     at emitOne (events.js:77:13)
+30 verbose stack     at Request.emit (events.js:169:7)
+30 verbose stack     at IncomingMessage.<anonymous> (/Users/chenpingyuan/.nvm/versions/node/v4.2.1/lib/node_modules/npm/node_modules/request/request.js:965:12)
+31 verbose statusCode 401
+32 verbose cwd /Users/chenpingyuan/workspace/collabProvidesModules
+33 error Darwin 15.4.0
+34 error argv "/Users/chenpingyuan/.nvm/versions/node/v4.2.1/bin/node" "/Users/chenpingyuan/.nvm/versions/node/v4.2.1/bin/npm" "adduser"
+35 error node v4.2.1
+36 error npm  v3.10.8
+37 error code E401
+38 error unauthorized Login first: -/user/org.couchdb.user:pychen/-rev/2-9591334eb1f4066376916a9869beb607
+39 error If you need help, you may report this error at:
+39 error     <https://github.com/npm/npm/issues>
+40 verbose exit [ 1, true ]
