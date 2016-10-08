@@ -25,7 +25,7 @@ export default function(targetDirs, blackList, enableDebug) {
       const modulePlatform = /^(.*)\.\w+$/.exec(moduleName[1]),
         module = modulePlatform ? modulePlatform[1] : moduleName[1],
         content = fs.readFileSync(dir, 'utf-8'),
-        match = /@providesModule ([\w\.]+)/.exec(content);
+        match = /@providesModule ([\S]+)/.exec(content);
       let aliasLabel;
       if (match) {
         aliasLabel = match[1];

@@ -1,6 +1,6 @@
 {
   "name": "collabProvidesModules",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Collab all @providesModule and convert it to alias for webpack",
   "main": "lib/index.js",
   "scripts": {
